@@ -14,11 +14,9 @@
     <body>
         <h1>Hello World!</h1>
         <h1> updated by SUDHIR </h1>
-<<<<<<< HEAD
-=======
-        <h2> Second commented by sudhir </h2>
->>>>>>> branch 'master' of https://github.com/ixeetdrive/SLMS.git
-       
+
+        <h2> Second commented by SUDHIR </h2>
+
         
 
         
