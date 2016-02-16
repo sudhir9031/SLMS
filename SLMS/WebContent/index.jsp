@@ -15,7 +15,6 @@
         <h1>Hello World!</h1>
         
         <h2>updated by SUDHIR </h2>
-        <h1> updated by master</h1>
         <h3> DATE 16 FEb 6:48 updated</h3>
         
    
