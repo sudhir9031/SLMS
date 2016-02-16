@@ -15,7 +15,6 @@
         <h1>Hello World!</h1>
         <h1> updated by SUDHIR </h1>
 
-        <h2> Second commented by SUDHIR </h2>
 
         
 
