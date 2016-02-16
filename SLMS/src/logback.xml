@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.lordofthejars.foo" level="INFO" additivity="false">
+   <appender-ref ref="STDOUT" />
+  </logger>
+
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+           <file>${SLMS_LOGDIR}/slms.log</file>
+           <append>true</append>
+           <encoder>
+                           <pattern>%d{dd MMM yyyy HH:mm:ss.SSS} %-5level {%thread} [%logger{40}] : %msg%n</pattern>
+           </encoder>
+               <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                   <!--<fileNamePattern>${catalina.base}/logs/catalina-%d{yyyy-MM-dd_HH-mm}-%i.log.zip</fileNamePattern>-->
+                    <fileNamePattern>${SLMS_LOGDIR}/mmdb-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+                    <maxHistory>10</maxHistory>
+                    <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                      <maxFileSize>20MB</maxFileSize>
+                    </timeBasedFileNamingAndTriggeringPolicy>
+                </rollingPolicy>
+</appender>
+  <!-- Strictly speaking, the level attribute is not necessary since -->
+  <!-- the level of the root level is set to DEBUG by default.       -->
+  	<root level="DEBUG">
+         <appender-ref ref="FILE" />
+         <appender-ref ref="STDOUT" />
+      </root>
+  
+</configuration>
+
